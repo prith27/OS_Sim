@@ -1,2 +1,2 @@
-# OS_Sim
-OS simulator using HTML,CSS and Javascript
+# Operating System - Simulator 
+<b> OS simulator using HTML, CSS and Javascript.</b>
