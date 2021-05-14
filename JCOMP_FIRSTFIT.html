@@ -19,12 +19,9 @@
             <div class="jumbotron">
                 <h1 style="color:black" class="display-3"><strong>First Fit</strong></h1>
                 <hr class="my-4">
-                <p style="color:#6E6A66;"> First Fit fits data into memory by scanning from the beginning of available memory to the end, until the first free space which is at least big enough to accept the data is found.This space is then allocated to the data.Any left over becomes a smaller, separate free space.</p>
-
-
+                <p style="color:#6E6A66;">First Fit fits data into memory by scanning from the beginning of available memory to the end, until the first free space which is at least big enough to accept the data is found.This space is then allocated to the data.Any left over becomes a smaller, separate free space.</p>
             </div>
             <br>
-
 	        		<div class="row">
 	        			<div class="form-group" style="margin-left:50px; float:left;">
 	        				<label class="col-form-label" for="inputDefault">Enter Total Memory Size</label>
@@ -33,12 +30,7 @@
 	                    <div class="form-group" style="margin-left:50px; float:left;">
 	        				<label class="col-form-label" for="inputDefault">Enter Number of Blocks</label>
 	                        <input class="form-control" id="numBlocks" name="block_no" placeholder="# Blocks" type="text" size="35">
-	                    </div>
-							<!-- <input type='text' id='totalMemSize'>
-							<input type='text' id='numBlocks'> -->
-							<!-- <button id='submitBtn'>Submit</button> -->
-
-																																																					                                               
+	                    </div>																																														                                               
 					</div>
 					<button type="submit" id="submitBtn" class="btn btn-primary" style="margin-left: 36px">Submit
 					</button>
@@ -52,9 +44,6 @@
 		        				<label class="col-form-label" for="inputDefault">Enter size of New Request</label>
 		                        <input class="form-control" id="requestSize" name="req_size" placeholder="Request Size" type="text" size="35">
 		                    </div>
-							<!-- <input type='text' id='requestSize'></input> -->
-							<!-- <button id='submitRequestBtn'>Make request!</button> -->
-							<!-- <p id='requestMsg'></p> -->
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary" style="margin-left: 36px" id='submitRequestBtn'>Make request!</button>
@@ -64,13 +53,16 @@
 		        				<label class="col-form-label" for="inputDefault">Block to Empty</label>
 		                        <input class="form-control" id="removeNum" name="req_size" placeholder="Empty a block" type="text" size="35">
 		                    </div>
-							<!-- <input type='text' id='requestSize'></input> -->
-							<!-- <button id='submitRequestBtn'>Make request!</button> -->
-							<!-- <p id='requestMsg'></p> -->
 						</div>
-</div>
+					</div>
 				<button type="submit" class="btn btn-primary" style="margin-left: 36px; float:left;" id='removeBtn'>Empty Block</button>
-	<p id='requestMsg' style="float:left; margin-left:50px;"></p>
+				<br><br>
+				<center>
+				<div id="disp" style="border: 2px solid black;border-radius: 10px;width:60%;display:none;height:70px;">
+					<h4 id='requestMsg'></h4>
+					<h4 id='Frag'></h4>
+				</div>
+				</center>	
         </div>
     </body>
     <script src='JCOMP_FIRSTFIT.js'></script>
