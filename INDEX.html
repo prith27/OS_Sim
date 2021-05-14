@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Home</title>
+     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="index.css">
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">OS Simulator</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Portfolio</a>
+      </li>
+    </ul>
+  </div>
+</nav><br><br>
+    <div class="heading">
+     <h1>Operating System Simulator</h1>
+    </div><br><br>
+    <div class="concepts">
+     <h2>Concepts Demonstrated</h2>
+        <div class="list-group">
+  <a href="#ps" class="list-group-item list-group-item-action list-group-item-danger">Process Scheduling</a>
+  <a href="#memman" class="list-group-item list-group-item-action list-group-item-success">Memory Management</a>
+  <a href="#ba" class="list-group-item list-group-item-action list-group-item-info">Bankers Algorithm</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-warning">File Management</a>
+</div>
+    </div><br>
+    <section class="s1" id="ps">
+    <div class="row ps">
+     <h2>Process Scheduling</h2><br>
+        <p>The process scheduling is the activity of the process manager that handles the removal of the running process from the CPU and the selection of another process on the basis of a particular strategy.Process scheduling allows OS to allocate a time interval of CPU execution for each process. Another important reason for using a process scheduling system is that it keeps the CPU busy all the time. This allows you to get the minimum response time for programs.</p>
+        <div class="list-group">
+  <a href="JCOMP_FCFS.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">First Come First Serve</h5>
+    </div>
+    <p class="mb-1">It is the simplest algorithm to implement. The process with the minimal arrival time will get the CPU first. The lesser the arrival time, the sooner will the process gets the CPU. It is the non-preemptive type of scheduling.</p>
+  </a>
+  <a href="JCOMP_SJF.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Shortest Job First</h5>
+    </div>
+    <p class="mb-1">The job with the shortest burst time will get the CPU first. The lesser the burst time, the sooner will the process get the CPU. It is the non-preemptive type of scheduling.</p>
+  </a>
+  <a href="JCOMP_RR.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Round Robin</h5>
+    </div>
+    <p class="mb-1">In the Round Robin scheduling algorithm, the OS defines a time quantum (slice). All the processes will get executed in the cyclic way. Each of the process will get the CPU for a small amount of time (called time quantum) and then get back to the ready queue to wait for its next turn. It is a preemptive type of scheduling.</p>
+    </a>
+    <a href="JCOMP_PBS.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Priority Based Scheduling</h5>
+    </div>
+    <p class="mb-1">In this algorithm, the priority will be assigned to each of the processes. The higher the priority, the sooner will the process get the CPU. If the priority of the two processes is same then they will be scheduled according to their arrival time.</p>
+    </a>
+    <a href="JCOMP_SRTF.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Shortest Remaining Time First</h5>
+    </div>
+    <p class="mb-1">It is the preemptive form of SJF. In this algorithm, the OS schedules the Job according to the remaining time of the execution.</p>
+    </a>
+    
+</div>
+</div></section><br><br>
+    <section class="s2" id="ba">
+    <div class="row ba">
+       <a href="JCOMP_BANKERS.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h2 class="mb-1">Bankers Algorithm</h2>
+    </div>
+    <p class="mb-1">The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities, before deciding whether allocation should be allowed to continue.</p>
+  </a>
+    </div>
+    </section><br><br>
+    <section class="s3" id="mm">
+    <div class="row mm" id="memman">
+     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h2 class="mb-1">Memory Management</h2>
+    </div>
+    <p class="mb-1">Memory management is the functionality of an operating system which handles or manages primary memory and moves processes back and forth between main memory and disk during execution. Memory management keeps track of each and every memory location, regardless of either it is allocated to some process or it is free. It checks how much memory is to be allocated to processes. It decides which process will get memory at what time. It tracks whenever some memory gets freed or unallocated and correspondingly it updates the status.</p>
+  </a>
+    </div>
+    </section>
+    </body>
+
+</html>
