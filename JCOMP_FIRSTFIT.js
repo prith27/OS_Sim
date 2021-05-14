@@ -2,20 +2,21 @@ var blocks = [];
 var filled = [];
 var totalsize;
 var numblocks;
+var d = document.getElementById("disp");
 
 var submitBtn = document.querySelector('#submitBtn');
-//console.log('Welcome!');
+
 submitBtn.onclick = getInitValues;
 
 function getInitValues() {
 	totalsize = document.querySelector('#totalMemSize').value;
 	numblocks = document.querySelector('#numBlocks').value;
-	var message = 'Read totalsize =' + totalsize + ' and numblocks = ' + numblocks;
 
 	var template = "<label class='col-form-label'>Enter Block Sizes</label>"
 	var i;
-	for (i = 0; i < numblocks; i++) {
-		template = template + "<input class='form-control' type='text' class='blockInput' id='blockSize" + i + "'>";
+	for (i = 0; i < numblocks; i++) 
+	{
+		template = template + "<br>Block " + i + " :<input class='form-control' type='text' class='blockInput' id='blockSize" + i + "'>";
 	}
 	template += "<button id='submitBlockBtn' class='btn btn-primary' style='margin-top: 36px'>Submit</button>";
 	if(numblocks > 0)
@@ -23,9 +24,9 @@ function getInitValues() {
 	else
 		render('Please enter the number of blocks', document.querySelector('#requestMsg'));
 
-	var submitBlockBtn = document.querySelector('#submitBlockBtn');
+	//var submitBlockBtn = document.querySelector('#submitBlockBtn');
 
-	var blocksize0 = document.querySelector('#blockSize0');
+	//var blocksize0 = document.querySelector('#blockSize0');
 
 	var i = 0;
 	var blockSizeBtn = document.querySelector('#submitBlockBtn');
@@ -34,7 +35,9 @@ function getInitValues() {
 	function getBlockSizes() {
 		i = 0;
 		var flag = 0;
-		for(i = 0; i < numblocks; i++) {
+		d.style.display = "block";
+		for(i = 0; i < numblocks; i++) 
+		{
 			blockSize = document.querySelector('#blockSize' + i).value;
 			if(parseInt(blockSize) < 0)
 				flag++;
@@ -54,54 +57,70 @@ function getInitValues() {
 			var blockSum = 0;
 			for(i = 0; i < numblocks; i++) 
 				blockSum += parseInt(blocks[i]);
-			console.log(blockSum);
-			console.log(totalsize);
-			if(blockSum > totalsize)
+			if(blockSum > totalsize || blockSum<totalsize)
 				render('Entered block sizes do not match the total size! Re-enter the block sizes.', document.querySelector('#requestMsg'));
 			else
-				render('Block sizes set successfully', document.querySelector('#requestMsg'));
+				render('Block sizes set successfully', document.querySelector('#requestMsg'),1);
 			var requestBtn = document.querySelector('#submitRequestBtn');
 			requestBtn.onclick = handleRequest;
 
 			var removeBtn = document.querySelector('#removeBtn');
 			removeBtn.onclick = handleRemove;
 		}
-		function handleRequest() {
+		function handleRequest() 
+		{
 			var alloc = -1;
 			var requestSize = document.querySelector('#requestSize').value;
 			if(parseInt(requestSize) < 0)
-				render("Request can't be negative", document.querySelector('#requestMsg'));
-			else {
-				for(i = 0; i < numblocks; i++) {
+			{
+				render("Request can't be negative", document.querySelector('#requestMsg'),2);
+				render("", document.querySelector('#Frag'),2);
+			}
+			else 
+			{
+				for(i = 0; i < numblocks; i++) 
+                {
 					//perform a first fit request
-					//console.log(blocks[i]);
-					//console.log(filled[i]);
-					if(parseInt(blocks[i]) >= parseInt(requestSize) && filled[i] == 0) {
+					if(parseInt(blocks[i]) >= parseInt(requestSize) && filled[i] == 0) 
+                    {
 						filled[i] = 1;
-						render('Allocated block ' + i + ' to the request', document.querySelector('#requestMsg'));
-
+						render('Allocated Block ' + i + ' to the request with size ' + requestSize, document.querySelector('#requestMsg'));
+                        render('Fragmented Space in the Block is ' + (parseInt(blocks[i])-requestSize), document.querySelector('#Frag'),2);
 						alloc = i;
 						break;
 					}
 				}
 			}
 			if(alloc == -1)
-				render("Request couldn't be accomodated.", document.querySelector('#requestMsg'));
+			{
+				render("Request couldn't be accomodated.", document.querySelector('#requestMsg'),2);
+				render("", document.querySelector('#Frag'),2);
+			}
 		}
 
 		function handleRemove() {
 			var remove = document.querySelector('#removeNum').value;
 			if(parseInt(remove) > numblocks || parseInt(remove) < 0)
-				render("Cannot remove what does not exist", document.querySelector('#requestMsg'));
-			else {
+				render("Cannot remove what does not exist", document.querySelector('#requestMsg'),2);
+			else 
+			{
 				filled[parseInt(remove)] = 0;
-				render('Emptied block ' + remove, document.querySelector('#requestMsg'));
+				render('Emptied block ' + remove, document.querySelector('#requestMsg'),1);
+				render("", document.querySelector('#Frag'),2);
 			}
 		}
 	}
 }
 
-function render (template, node) {
+function render (template, node,type = 0)
+{
 	if(!node)
 		return;
-	node.innerHTML = template;}
+	if(type==0)
+		node.style.color = "black";
+	else if(type==1)
+		node.style.color = "green";
+	else
+		node.style.color = "red";
+	node.innerHTML = template;
+}
