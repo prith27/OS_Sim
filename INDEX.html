@@ -90,16 +90,39 @@
   </a>
     </div>
     </section><br><br>
-    <section class="s3" id="mm">
-    <div class="row mm" id="memman">
-     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <section class="mm" id="ps">
+    <div class="row ps">
+     <h2>Memory Management (Fixed Partition)</h2><br>
+        <p>Memory management is the functionality of an operating system which handles or manages primary memory and moves processes back and forth between main memory and disk during execution. Memory management keeps track of each and every memory location, regardless of either it is allocated to some process or it is free. It checks how much memory is to be allocated to processes. It decides which process will get memory at what time. It tracks whenever some memory gets freed or unallocated and correspondingly it updates the status.</p>
+        <div class="list-group">
+  <a href="JCOMP_FIRSTFIT.html" class="list-group-item list-group-item-action flex-column align-items-start ho">
     <div class="d-flex w-100 justify-content-between">
-      <h2 class="mb-1">Memory Management</h2>
+      <h5 class="mb-1">First Fit</h5>
     </div>
-    <p class="mb-1">Memory management is the functionality of an operating system which handles or manages primary memory and moves processes back and forth between main memory and disk during execution. Memory management keeps track of each and every memory location, regardless of either it is allocated to some process or it is free. It checks how much memory is to be allocated to processes. It decides which process will get memory at what time. It tracks whenever some memory gets freed or unallocated and correspondingly it updates the status.</p>
+    <p class="mb-1">First Fit fits data into memory by scanning from the beginning of available memory to the end, until the first free space which is at least big enough to accept the data is found.This space is then allocated to the data.Any left over becomes a smaller, separate free space..</p>
   </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Worst Fit</h5>
     </div>
-    </section>
+    <p class="mb-1">Worst Fit allocates a process to the partition which is largest sufficient among the freely available partitions available in the main memory. If a large process comes at a later stage, then memory will not have space to accommodate it.</p>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Best Fit</h5>
+    </div>
+    <p class="mb-1">The best fit deals with allocating the smallest free partition which meets the requirement of the requesting process. This algorithm first searches the entire list of free partitions and considers the smallest hole that is adequate. It then tries to find a hole which is close to actual process size needed.</p>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ho">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Next Fit</h5>
+    </div>
+    <p class="mb-1">Next fit is another version of First Fit in which memory is searched for empty spaces similar to the first fit memory allocation scheme. ... This memory allocation scheme uses a moving pointer which moves along the empty memory slots to search memory for the next fit.</p>
+    </a>
+    
+    
+</div>
+</div></section>
     </body>
 
 </html>
