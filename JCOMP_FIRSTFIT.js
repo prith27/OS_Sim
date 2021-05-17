@@ -84,7 +84,7 @@ function getInitValues() {
 					if(parseInt(blocks[i]) >= parseInt(requestSize) && filled[i] == 0) 
                     {
 						filled[i] = 1;
-						render('Allocated Block ' + i + ' to the request with size ' + requestSize, document.querySelector('#requestMsg'));
+						render('Allocated Block ' + i + ' to the request with size ' + requestSize, document.querySelector('#requestMsg'),1);
                         render('Fragmented Space in the Block is ' + (parseInt(blocks[i])-requestSize), document.querySelector('#Frag'),2);
 						alloc = i;
 						break;
