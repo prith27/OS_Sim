@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>File Management</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        <style>
+            body{
+                background-color: azure;
+                color: yellow;
+                
+            }
+        divx{
+    display:inline-block;
+    background-color: azure;
+    color:green;
+    width: 1250px;
+    height: 400px;
+    border: 3px solid grey;
+    position:relative;
+    top:150px;
+    left:50px;
+    overflow: auto;
+}
+
+.textbox 
+{ 
+    background: black; 
+    height:25px; 
+    width: 275px; 
+    border: none; 
+    color: white; 
+    outline: none; 
+}
+
+.container {
+    width: 1140px;
+    min-height: 600px;
+    background-color: black;}
+            .t1{
+                color:black;
+            }
+            .container1{
+                margin-left: 13%;
+                width: 1140px;
+    min-height: 600px;
+            }
+        </style>
+        
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="INDEX.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <br>
+        <div class="container1">
+        <div class="jumbotron">
+                <h1 style="color:black" class="display-3"><strong>Single-Level Directory</strong></h1>
+                <hr class="my-4">
+                <p style="color:#6E6A66;">Single level directory structure has only one directory which is called the root directory. The users are not allowed to create subdirectories under the root directory. All the files created by the several users are present in the root directory only.There is one drawback of Single-level directory structure, a user cannot use the same file name used by another user in the system. Even if the file with the same name is created the old file will get destroyed first and replaced by the new file having the same name.</p>
+            </div></div>
+        
+        <div align= "center"><p class="t1">Type command_list and press ENTER to get list of available commands</p></div>
+      <div class="container">
+        <div id = 'divx'></div>
+      </div>
+      <br>
+      <br>
+      <script type="text/javascript" src="JCOMP_SINGLEDIR.js"></script>
+    </body>
+</html>
