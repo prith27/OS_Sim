@@ -4,7 +4,7 @@ var current_path = "/"            // Current location of user
 var pointer = -1                   // pointer points to the index of the current directory
                                    //pointer = -1 corresponds to root directory
 var file_dir = []                 // List of files and directories
-var commands = ["create","vi","rm","truncate","ls","rename","properties","command_list"] //List of predefined commands
+var commands = ["create","vi","rm","truncate","ls","rename","properties","command_list","cls"] //List of predefined commands
 
 /*
 ------------COMMANDS AVAILABLE-------------
@@ -78,6 +78,8 @@ function nextline(event,text)
 	    break
     case 7:command_list()
     	    break
+    case 8:cls()
+        break
    }
   }
  }
@@ -171,7 +173,7 @@ function vi(file)
    div.appendChild(br)
    div.appendChild(contents)
    div.appendChild(br1)
-   contents.focus()
+   //contents.focus()
   }
  }
  if(flag == 0)
@@ -274,6 +276,11 @@ function properties(file)
  start()
 }
 
+function cls()
+{
+    document.getElementById("divx").innerHTML = "";
+    start();
+}
 //Function to display available commands list
 function command_list()
 {
@@ -285,6 +292,7 @@ function command_list()
  var l5 = document.createTextNode("ls	")
  var l6 = document.createTextNode("rename	")
  var l7 = document.createTextNode("properties")
+ var l8 = document.createTextNode("cls")
  var br = document.createElement("br")
  var br1 = document.createElement("br")
  var br2 =document.createElement("br")
@@ -294,7 +302,7 @@ function command_list()
  var br6 =document.createElement("br")
  var br7 =document.createElement("br")
  div.appendChild(l1)
- div.appendChild(br7)
+ div.appendChild(br)
  div.appendChild(l2)
  div.appendChild(br1)
  div.appendChild(l3)
@@ -307,5 +315,9 @@ function command_list()
  div.appendChild(br5)
  div.appendChild(l7)
  div.appendChild(br6)
+ div.appendChild(l8)
+ div.appendChild(br7)
+
+ 
  start()
 }
